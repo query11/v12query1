@@ -229,19 +229,19 @@ client.on("messageUpdate", async (oldMsg, newMsg) => {
 /////////////////sayaç//////////////
 
 client.on("guildMemberAdd", async member => {
-let frenzysayı = await db.fetch(`FrenzyCode+SayaçSayı_${member.guild.id}`)  
-let frenzykanal = await db.fetch(`FrenzyCode+SayaçKanal_${member.guild.id}`)  
-if(!frenzysayı || !frenzykanal) return
-let sonuç = frenzysayı - member.guild.memberCount
-client.channels.get(frenzykanal).send(`✅ ${member} Katıldı **${frenzysayı}** Kişiye Ulaşmak için **${sonuç}** Kişi Kaldı`)
+let Piratesayı = await db.fetch(`PirateCode+SayaçSayı_${member.guild.id}`)  
+let Piratekanal = await db.fetch(`PirateCode+SayaçKanal_${member.guild.id}`)  
+if(!Piratesayı || !Piratekanal) return
+let sonuç = Piratesayı - member.guild.memberCount
+client.channels.get(Piratekanal).send(`✅ ${member} Katıldı **${Piratesayı}** Kişiye Ulaşmak için **${sonuç}** Kişi Kaldı`)
 })
 client.on("guildMemberRemove", async member => {
-let frenzysayı = await db.fetch(`FrenzyCode+SayaçSayı_${member.guild.id}`)  
-let frenzykanal = await db.fetch(`FrenzyCode+SayaçKanal_${member.guild.id}`)  
-if(!frenzysayı || !frenzykanal) return
-let sonuç = frenzysayı - member.guild.memberCount
+let Piratesayı = await db.fetch(`PirateCode+SayaçSayı_${member.guild.id}`)  
+let Piratekanal = await db.fetch(`PirateCode+SayaçKanal_${member.guild.id}`)  
+if(!Piratesayı || !Piratekanal) return
+let sonuç = Piratesayı - member.guild.memberCount
   
-client.channels.get(frenzykanal).send(`⛔️ ${member} Ayrıldı **${frenzysayı}** Kişiye Ulaşmak İçin **${sonuç}** Kişi Kaldı`)
+client.channels.get(Piratekanal).send(`⛔️ ${member} Ayrıldı **${Piratesayı}** Kişiye Ulaşmak İçin **${sonuç}** Kişi Kaldı`)
 return
 })
 
@@ -422,7 +422,7 @@ message.guild.createChannel(`➕│5 Kişilik Oda`, 'voice')
 
 
 client.on('message', async message => {
-let aktif = await db.fetch(`reklamEngelFrenzy_${message.channel.id}`)
+let aktif = await db.fetch(`reklamEngelPirate_${message.channel.id}`)
 if (!aktif) return 
 let reklamlar = ["discord.app", "discord.gg" ,"discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az", ".cf", ".me", ".in"]
 let kelimeler = message.content.slice(" ").split(/ +/g)
@@ -432,9 +432,9 @@ message.delete()
 message.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam Yasak**').then(msg => msg.delete(7000)) 
 }
 });
-//Frenzy Code
+//Pirate Code
 client.on("messageUpdate", async (oldMsg, newMsg) => {
-let aktif = await db.fetch(`reklamEngelFrenzy_${oldMsg.channel.id}`)
+let aktif = await db.fetch(`reklamEngelPirate_${oldMsg.channel.id}`)
 if(!aktif) return
 let reklamlar = ["discord.app", "discord.gg","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az", ".cf", ".me", ".in"]
 let kelimeler = newMsg.content.slice(" ").split(/ +/g)
