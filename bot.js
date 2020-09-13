@@ -855,7 +855,7 @@ client.on("message", msg => {
 
 
 const DBL = require("dblapi.js");
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxMzcxMzcyNzc5NDQ0NjM5NyIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkzMzc3MDEwfQ.RfeHx67XnfjidppVaF2id-cV0WbbnL7-2fKyjdiWPAs', client);
+const dbl = new DBL('', client);
 
 // Optional events
 dbl.on('posted', () => {
