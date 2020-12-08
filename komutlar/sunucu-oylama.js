@@ -21,9 +21,9 @@ const Discord = require('discord.js');
        .setColor("#ffd100")
        .setThumbnail(client.user.avatarURL)
        .setTimestamp()
-       .setFooter('Pirate', client.user.avatarURL)
+       .setFooter('Sawior', client.user.avatarURL)
 
-       .addField(`**Pirate  | Oylama**`, `**${question}**`)).then(function(message) {
+       .addField(`**Sawior  | Oylama**`, `**${question}**`)).then(function(message) {
 
          message.react('👍🏻');
 

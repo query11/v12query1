@@ -27,7 +27,7 @@ if (!kanal) return message.channel.send('**Kayıt Logunu Hangi Kanala Tutayım ?
  .addField("Ayarlanan Rol", `**${rol}**`)
  //.addField("Ayarlanan Kanal", `**${kanal}**`)
  //.addField("Ayarlayan", message.author.username + '#' + message.author.discriminator)*/
-  message.channel.send(`Sunucuya Kayıt olanın Logu Buraya **${kanal}** Gelecektir.`)
+  message.channel.send(`Sunucuya Kayıt olanın Logu Buraya **${785515482815791184}** Gelecektir.`)
  };
 
 exports.conf = {
@@ -41,5 +41,5 @@ kategori:"yetkili"
 exports.help = {
  name: 'kayıt-log',
  description: 'kayıt Log kanalı seçersiniz',
- usage: 'kayıt-log <#kanal>'
+ usage: 'kayıt-log <#teyit-chat>'
 };

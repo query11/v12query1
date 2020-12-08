@@ -51,9 +51,9 @@ exports.run = async (client, msg, args) => {
     let answer = '';
 
     if (result === 'won') {
-        answer = 'aşarılı, sen **Kazandın**\nSenin Seçtiği: `' + choice + '` | Bot\'s Seçtiği: `' + botChoice + '`';
+        answer = 'Tebrikler, sen **Kazandın**\nSenin Seçtiği: `' + choice + '` | Bot\'s Seçtiği: `' + botChoice + '`';
     } else if (result === 'lost') {
-        answer = 'Bidakine **Kaybetin Dostum** \nSenin Seçtiğin: `' + choice + '` | Bot\'s Seçtiği: `' + botChoice + '`';
+        answer = 'Haha! **Kaybettin Dostum** \nSenin Seçtiğin: `' + choice + '` | Bot\'s Seçtiği: `' + botChoice + '`';
     } else if (result === 'draw') {
         answer = '*Berabere** \nSenin Seçimin: `' + choice + '` | Bot\'s Seçimi: `' + botChoice + '`';
     }

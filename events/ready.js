@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `-yardım | -davet`,
+            name: `Sawior ❤ Query`,
             type: 'WATCHING'   //WATCHING - İZLİYOR LISTINING - DİNLİYOR
         },
         status: 'online'   //online - Çevrimiçi idle - Boşta 
     })
-    console.log(`Pirate Bot Hazır, Komutlar Yüklendi, Hizmete Hazırım.`);
+    console.log(`Sawior Bot Hazır, Komutlar Yüklendi, Hizmete Hazırım.`);
 }

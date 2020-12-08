@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+require("events").EventEmitter.defaultMaxListeners = 30000;
+  require("events").defaultMaxListeners = 30000;
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
@@ -21,7 +23,7 @@ const ytdl = require('ytdl-core');
 
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + "Lord Creative | Youtube Channel");
+  console.log(Date.now() + "query");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -144,8 +146,8 @@ if (!modlogkanal) return;
   const embed = new Discord.RichEmbed()
   .setColor("#ffd100")
   .setTitle("MESAJ SİLİNDİ")
-.setDescription(`<a:hypesquad1:750076071721828452> <@!${message.author.id}> adlı kullanıcı tarafından <#${message.channel.id}> kanalına gönderilen mesaj silindi!\n\nSilinen Mesaj: **${message.content}**`)
-  .setFooter("Pirate Bot | Log Sistemi")
+.setDescription(`<:hypesquad1:785566231524671509> <@!${message.author.id}> adlı kullanıcı tarafından <#${message.channel.id}> kanalına gönderilen mesaj silindi!\n\nSilinen Mesaj: **${message.content}**`)
+  .setFooter("Sawior Bot | Log Sistemi")
   modlogkanal.sendEmbed(embed);
   })
 
@@ -156,9 +158,9 @@ if (!modlogkanal) return;
   const embed = new Discord.RichEmbed()
   .setColor("#ffd100")
 
-    .setDescription(`<a:hypesquad1:750076071721828452> Üye Sunucudan Yasaklandı! \n<@!${message.user.id}>, ${message.user.tag}`)
+    .setDescription(`<:hypesquad1:785566231524671509> Üye Sunucudan Yasaklandı! \n<@!${message.user.id}>, ${message.user.tag}`)
         .setThumbnail(message.user.avatarURL)
-  .setFooter("Pirate Bot | Log Sistemi")
+  .setFooter("Sawior Bot | Log Sistemi")
   modlogkanal.sendEmbed(embed);
   })
 client.on('channelCreate', async channel  => {
@@ -168,16 +170,16 @@ if (!modlogkanal) return;
     if (channel.type === "text") {
                 let embed = new Discord.RichEmbed()
                     .setColor('#ffd100')
-                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} adlı metin kanalı oluşturuldu.`)
-                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+                .setDescription(`<:hypesquad1:785566231524671509> ${channel.name} adlı metin kanalı oluşturuldu.`)
+                .setFooter(`Sawior Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
             if (channel.type === "voice") {
                 let embed = new Discord.RichEmbed()
                 .setColor('#ffd100')
 .setTitle("SES KANALI OLUŞTURULDU")
-                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} adlı ses kanalı oluşturuldu!`)
-                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+                .setDescription(`<:hypesquad1:785566231524671509> ${channel.name} adlı ses kanalı oluşturuldu!`)
+                .setFooter(`Sawior Bot | Log Sistemi Kanal ID: ${channel.id}`)
 
                 modlogkanal.send({embed});
             }
@@ -190,16 +192,16 @@ if (!modlogkanal) return;
     if (channel.type === "text") {
                 let embed = new Discord.RichEmbed()
                     .setColor('#ffd100')
-                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} adlı metin kanalı silini!`)
-                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+                .setDescription(`<:hypesquad1:785566231524671509> ${channel.name} adlı metin kanalı silini!`)
+                .setFooter(`Sawior Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
             if (channel.type === "voice") {
                 let embed = new Discord.RichEmbed()
                 .setColor('#ffd100')
 .setTitle("SES KANALI SİLİNDİ")
-                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} adlı ses kanalı silindi`)
-            .setFooter(`Pirate Bot | Log Sistemi  Kanal ID: ${channel.id}`)
+                .setDescription(`<:hypesquad1:785566231524671509> ${channel.name} adlı ses kanalı silindi`)
+            .setFooter(`Sawior Bot | Log Sistemi  Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             }
     })
@@ -429,7 +431,7 @@ let kelimeler = message.content.slice(" ").split(/ +/g)
 if (reklamlar.some(word => message.content.toLowerCase().includes(word))) {
 if (message.member.hasPermission("BAN_MEMBERS")) return;
 message.delete()
-message.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam Yasak**').then(msg => msg.delete(7000)) 
+message.reply('<:hypesquad1:785566231524671509> **Hey Dostum Bu Sunucuda Reklam Yasak**').then(msg => msg.delete(7000)) 
 }
 });
 //Pirate Code
@@ -441,7 +443,7 @@ let kelimeler = newMsg.content.slice(" ").split(/ +/g)
 if (reklamlar.some(word => newMsg.content.toLowerCase().includes(word))) {
 if (newMsg.member.hasPermission("BAN_MEMBERS")) return;
 newMsg.delete()
-oldMsg.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam Yasak**').then(msg => msg.delete(7000)) 
+oldMsg.reply('<:hypesquad1:785566231524671509> **Hey Dostum Bu Sunucuda Reklam Yasak**').then(msg => msg.delete(7000)) 
 }
 });
 
@@ -468,8 +470,8 @@ oldMsg.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam 
                   if (uyarisayisi === null) {
                       let uyari = new Discord.RichEmbed()
                           .setColor("#ffd100")
-                          .setFooter('Pirate BOT', client.user.avatarURL)
-                          .setDescription(`<a:hypesquad1:750076071721828452> **<@${message.author.id}> Reklam Kick Sistemine Yakalandın! Reklam Yapmaya Devam Edersen Kickleniceksin (1/3)**`)
+                          .setFooter('Sawior BOT', client.user.avatarURL)
+                          .setDescription(`<:hypesquad1:785566231524671509> **<@${message.author.id}> Reklam Kick Sistemine Yakalandın! Reklam Yapmaya Devam Edersen Kickleniceksin (1/3)**`)
                           .setTimestamp()
                       message.channel.send(uyari)                
   }
@@ -477,7 +479,7 @@ oldMsg.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam 
                       let uyari = new Discord.RichEmbed()
                           .setColor("#ffd100")
                           .setFooter('Pirate BOT ', client.user.avatarURL)
-                          .setDescription(`<a:hypesquad1:750076071721828452> **<@${message.author.id}> Reklam Kick Sistemine Yakalandın! Reklam Yapmaya Devam Edersen Kickleniceksin (2/3)**`)
+                          .setDescription(`<:hypesquad1:785566231524671509> **<@${message.author.id}> Reklam Kick Sistemine Yakalandın! Reklam Yapmaya Devam Edersen Kickleniceksin (2/3)**`)
                           .setTimestamp()
                       message.channel.send(uyari)
                   }
@@ -488,21 +490,21 @@ oldMsg.reply('<a:hypesquad1:750076071721828452> **Hey Dostum Bu Sunucuda Reklam 
                       })
                       let uyari = new Discord.RichEmbed()
                           .setColor("#ffd100")
-                          .setFooter('Pirate BOT', client.user.avatarURL)
-                          .setDescription(`<a:hypesquad1:750076071721828452> **<@${message.author.id}> 3 Adet Reklam Uyarısı Aldığı İçin Kicklendi. Bir Kez Daha Yaparsa Banlanacak**`)
+                          .setFooter('Sawior BOT', client.user.avatarURL)
+                          .setDescription(`<:hypesquad1:785566231524671509> **<@${message.author.id}> 3 Adet Reklam Uyarısı Aldığı İçin Kicklendi. Bir Kez Daha Yaparsa Banlanacak**`)
                           .setTimestamp()
                       message.channel.send(uyari)
                   }
                   if (uyarisayisi === 3) {
                       message.delete();
                       await kullanici.ban({
-                          reason: `Pirate Reklam Kick Sistemi`,
+                          reason: `Sawior Reklam Kick Sistemi`,
                       })
                       db.delete(`reklamuyari_${message.author.id}`)
                       let uyari = new Discord.RichEmbed()
                           .setColor("#ffd100")
-                          .setFooter('Pirate BOT', client.user.avatarURL)
-                          .setDescription(`<a:hypesquad1:750076071721828452> **<@${message.author.id}> Kick Yedikten Sonra Tekrar Devam Ettiği İçin Banlandı.**`)
+                          .setFooter('Sawior BOT', client.user.avatarURL)
+                          .setDescription(`<:hypesquad1:785566231524671509> **<@${message.author.id}> Kick Yedikten Sonra Tekrar Devam Ettiği İçin Banlandı.**`)
                           .setTimestamp()
                       message.channel.send(uyari)
                   }
@@ -709,22 +711,22 @@ let role = db.fetch(`otorolisim_${member.guild.id}`)
  if (!otorol || otorol.toLowerCase() === 'yok') return;
 else {
  try {
-  ///////////lord
+  ///////////Query
 
   if (!i) return 
 if (!role) {
   member.addRole(member.guild.roles.get(otorol))
                         var embed = new Discord.RichEmbed()
-                        .setDescription("<a:hypesquad1:750076071721828452> **Sunucuya Yeni Katılan** @" + member.user.tag + " **Kullanıcısına** <@&" + otorol + ">  **Rolü verildi**")
+                        .setDescription("<:hypesquad1:785566231524671509> **Sunucuya Yeni Katılan** @" + member.user.tag + " **Kullanıcısına** <@&" + otorol + ">  **Rolü verildi**")
                         .setColor('#ffd100') 
-                        .setFooter(`Pirate Otorol Sistemi`)
+                        .setFooter(`Sawior Otorol Sistemi`)
      member.guild.channels.get(i).send(embed) 
 } else if (role) {
     member.addRole(member.guild.roles.get(otorol))
                         var embed = new Discord.RichEmbed()
-                        .setDescription(`<a:hypesquad1:750076071721828452> **Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi**`)
+                        .setDescription(`<:hypesquad1:785566231524671509> **Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi**`)
                         .setColor('#ffd100') 
-                        .setFooter(`Pirate Otorol Sistemi`)
+                        .setFooter(`Sawior Otorol Sistemi`)
      member.guild.channels.get(i).send(embed) 
   
 }
@@ -742,7 +744,7 @@ client.on('message', async (msg, member, guild) => {
   let i = await  db.fetch(`saas_${msg.guild.id}`)
       if(i === 'açık') {
         if (msg.content.toLowerCase() === 'sa') {
-        msg.reply('<a:hypesquad1:750076071721828452> **Aleyküm Selam Hoşgeldin**');      
+        msg.reply('<:hypesquad1:785566231524671509> **Aleyküm Selam Hoşgeldin**');      
       } 
       }
     });
@@ -759,7 +761,7 @@ client.on("guildMemberAdd", async member => {
      member.setNickname(`${codeming} | ${member.user.username}`);
     const amil = new Discord.RichEmbed()
       .setColor("#ffd100")
-      .setDescription(`<a:hypesquad1:750076071721828452> **@${member.user.tag}** Adlı Kişiye Tag Verildi!`)
+      .setDescription(`<:hypesquad1:785566231524671509> **@${member.user.tag}** Adlı Kişiye Tag Verildi!`)
       .setFooter(client.user.username, client.user.avatarURL);
     client.channels.get(miran).send(amil);
     return;
@@ -773,15 +775,117 @@ client.on("guildMemberAdd", async member => {
 })
 /////// OTTAG
 
+/////BY QUERY/////
+
+client.elevation = message => {
+  if (!message.guild) {
+    return;
+  }
+  let permlvl = 0;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  return permlvl;
+};
+
+client.on("ready", () => {//query
+  client.user.setPresence({
+    game: { name: `Sawior`, type: "WATCHING" },
+    status: "online"
+  });
+});
+
+// İSİM YAŞ İSİM DEĞİŞTİRME 
+
+client.on("guildMemberAdd", member => {
+  let tag = ayarlar.tag;
+  //query
+  member.setNickname(`${tag} İsim • Yaş`);
+});
+
+// İSİM YAŞ İSİM DEĞİŞTİRME SON
 
 
 
 
 
 
+//BOT ROLÜ
+
+client.on(`guildMemberAdd`, async member => {//query
+  let botrol = ayarlar.botROL;
+if(!member.bot) return;
+member.roles.add(botrol)
+})
+
+// BOT ROLÜ SON
 
 
 
+
+// kayıtsız rolü
+
+client.on(`guildMemberAdd`, async member => {
+  let kayıtsızROL = ayarlar.kayıtsızROL;
+if(member.bot) return;
+member.roles.add(kayıtsızROL)
+})
+
+/// kayıtsız rolü son
+//query
+
+
+
+//query
+
+// BOT OTOROL
+
+client.on('guildMemberAdd', async member => {//query
+if(member.user.bot) {
+  const botROL = ayarlar.botROL
+member.roles.add(botROL)
+}
+})
+// GİRİŞ 
+  client.on("guildMemberAdd", member => { 
+    const moment = require('moment');
+  const kanal = ayarlar.giriskanal;
+  let user = client.users.cache.get(member.id);
+  require("moment-duration-format");
+    const tarih = new Date().getTime() - user.createdAt.getTime();  
+  const embed = new Discord.MessageEmbed()
+  let rol = ayarlar.kayıtsızROL
+ member.roles.add(rol)//query
+
+  var kontrol;
+if (tarih < 1296000000) kontrol = '<a:no1:756946138342621295> Bu Kullanıcı **Şüpheli**'
+if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **Güvenli**'
+  moment.locale("tr");
+  let kanal1 = client.channels.cache.find(x => x.id === kanal);
+    let giris = new Discord.MessageEmbed()
+    .setDescription(`
+ » • <:new_partner_badge:781900500022853632> Hoşgeldin ${member}
+ 
+ » • <a:pembeh:751553654561046619> Seninle birlikte **${member.guild.memberCount}** kişiyiz.
+ 
+ » • [ **${ayarlar.tag}** ] Tagımızı alarak ekibimize katılabilirsin.
+ 
+ » • <a:alarm1:756946152938799225> <@&${ayarlar.yetkiliROL}> rolündekiler seninle ilgilenecektir.
+ 
+ » •   ${kontrol} 
+ 
+ » • <a:sari3:751558669585612830> Hesabın Oluşturulma Tarihi: \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
+ 
+ » • <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
+
+`)//query
+    .setImage('https://i.pinimg.com/originals/8c/9a/07/8c9a079986a4ce112882fea6db3ffdee.gif')
+    .setTimestamp()
+    
+      client.channels.cache.find(x => x.id === kanal).send(`<@&${ayarlar.yetkiliROL}>`)
+client.channels.cache.find(x => x.id === kanal).send(giris)
+    
+  });
+// GİRİŞ SON
+//query
 
 ///<a:EMOJİİSİM:EMOJİİD>
 
@@ -873,7 +977,7 @@ dbl.on('error', e => {
           let rolkoruma = await db.fetch(`rolk_${role.guild.id}`);
             if (rolkoruma == "acik") {
           role.guild.createRole({name: role.name, color: role.color,  permissions: role.permissions}) 
-                role.guild.owner.send(`<a:hypesquad1:750076071721828452> **${role.name}** Adlı Rol Silindi Ve Ben Rolü Tekrar Oluşturdum  :white_check_mark:`)
+                role.guild.owner.send(`**${role.name}** Adlı Rol Silindi Ve Ben Rolü Tekrar Oluşturdum  :white_check_mark:`)
         
           
         }
@@ -888,7 +992,7 @@ dbl.on('error', e => {
           
           member.kick(member, `Bot Koruması Aktif!`)
           
-          member.guild.owner.send(`<a:hypesquad1:750076071721828452> Sunucunuza Bir Bot Eklendi ve Sunucudan Otomatik Olarak Atıldı, Sunucuya Eklenmesini Onaylıyor iseniz \`-giriş-izni ${member.id}\``)
+          member.guild.owner.send(`<:hypesquad1:785566231524671509> Sunucunuza Bir Bot Eklendi ve Sunucudan Otomatik Olarak Atıldı, Sunucuya Eklenmesini Onaylıyor iseniz \`-giriş-izni ${member.id}\``)
           })
 
 

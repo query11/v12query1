@@ -19,9 +19,9 @@ exports.run = (client, message, args) => {
 
         const embed = new Discord.RichEmbed()
         .setTitle(`Hey ${message.author.username} !`)
-        .setAuthor("Pirat | Destek Sistemi")
+        .setAuthor("Sawior | Destek Sistemi")
         .setDescription("**Buradaki destek ekibimiz sizinle ilgilenecektir.\nDestek talebini iptal etmek için \`-iptal\` yazabilirsin!**")
-        .setFooter('Pirat | Destek Sistemi', client.user.avatarURL)
+        .setFooter('Sawior | Destek Sistemi', client.user.avatarURL)
         .setColor('#ffd100')
         .setTimestamp()
         ch.send(embed).catch()

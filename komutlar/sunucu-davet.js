@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
   message.channel.createInvite({maxAge: 0}).then(invite => {
     let embed = new Discord.RichEmbed()
     .setColor('#ffd100')
-    .setDescription(`**Bu Sunucunun Davet Linki**: ${invite}`);
+    .setDescription(`**Bu Sunucunun Davet Linki**/n Dev query: ${invite}`);
     message.channel.send(embed);
   });
 }

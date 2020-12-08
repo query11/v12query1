@@ -82,7 +82,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`Kimlik`, userinfo.id, true)
         .addField(`Botmu`, userinfo.bot, true)
         .addField(`Roller`, `${msg.guild.members.get(user.id).roles.filter(r => r.name !== "@everyone").map(r => r).join(' **|** ') || "**Bu kullanıcıda hiçbir rol bulunmuyor**"}`, false)
-        .setFooter(`Pirate Bot Kullanıcı Bilgi Sistemi`)
+        .setFooter(`Sawior Bot Kullanıcı Bilgi Sistemi`)
         msg.channel.send(uembed)
     }
 
